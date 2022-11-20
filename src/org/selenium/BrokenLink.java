@@ -16,7 +16,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BrokenLink {
 
-	public static void main(String[] args)  {
+	public static void main(String[] args) throws IOException  {
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Users\\vinoth\\eclipse-workspace\\Selenium\\Driver\\chromedriver.exe");
 		WebDriver w = new ChromeDriver();
@@ -29,20 +29,23 @@ public class BrokenLink {
 			
 			String at = webElement.getAttribute("href");
 			
-		}
+		
 		
 
-//			if (at != null) {
-//				URL u = new URL(at);
-//				URLConnection openConnection = u.openConnection();
-//				HttpsURLConnection hp = (HttpsURLConnection) openConnection;
-//				int code = hp.getResponseCode();
-//				if (code >= 400) {
-//					System.out.println(at);
-//				}
+			if (at != null) {
+				URL u = new URL(at);
+				URLConnection openConnection = u.openConnection();
+				HttpsURLConnection hp = (HttpsURLConnection) openConnection;
+				int code = hp.getResponseCode();
+				if (code >= 400) {
+					System.out.println(at);
+					System.err.println("15000");
+				}
 
 			}
 
 		
 
 	}
+	}
+}
