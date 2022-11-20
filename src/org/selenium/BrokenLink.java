@@ -39,7 +39,7 @@ public class BrokenLink {
 				int code = hp.getResponseCode();
 				if (code >= 400) {
 					System.out.println(at);
-					System.err.println("15000");
+					System.err.println("5000");
 				}
 
 			}
